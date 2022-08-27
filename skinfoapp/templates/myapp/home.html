@@ -1,0 +1,55 @@
+{%  load static  %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Skinfo</title>
+  </head>
+  <body id="bg" style="margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-size: cover; background-image: url('{% static "myapp/images/5.jpg" %}');">
+    <div class="login-box" style="width: 290px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;">
+  <h4 style="text-align: center;font-size: 10px; margin-top:160px; color: #800000;">    A SKIN DISEASE RECOGNITION PLATFORM</h4>
+  <h1 style="color: #A52A2A; float: left;
+  font-size: 40px;
+  border-bottom: 5px solid #4caf50;
+  margin-bottom: 20px;
+  padding: 5px 0;">SKINFO
+  </h1>
+
+
+      	<div class="textbox1" style= "border: none;
+        outline: none;
+        background: none;
+        color: #808080;
+        font-size: 18px;
+        padding: 5px 0;
+        width: 100%;
+        overflow: hidden;
+        float: left;
+        margin: 0 10px;">
+		     <div>
+      <form class="" method="post" enctype="multipart/form-data" action="predict">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" style="width: 100%;
+        background: none;
+        border: 2px solid #000000;
+        color: #4caf50;
+        padding: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 12px 0;" value="SCAN">
+
+      </form>
+    </div>
+
+
+  </body>
+</html>

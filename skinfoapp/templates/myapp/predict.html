@@ -1,0 +1,68 @@
+{%  load static  %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Skinfo</title>
+  </head>
+  <body id="bg" style="margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-size: cover; background-image: url('{% static "myapp/images/5.jpg" %}');">
+
+<div class="login-box" style="width: 290px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+color: white;">
+<h4 style="text-align: center; margin-top:160px; font-size: 12px; color: #800000;">    A SKIN DISEASE RECOGNITION PLATFORM</h4>
+  <h1 style="color: #A52A2A; float: left;
+  font-size: 40px;
+  border-bottom: 6px solid #4caf50;
+  margin-bottom: 40px;
+  padding: 13px 0;">SKINFO
+  </h1>
+
+
+	<div class="textbox1" style= "border: none;
+  outline: none;
+  background: none;
+  color: #800000;
+  padding: 8px 0;
+  width: 65%;
+  overflow: hidden;
+  float: left;
+  margin: 0 10px;">
+  <form class="" method="post">
+    {% csrf_token %}
+    <label for="fname" style="font-size:15px">Age</label>{{form.Age}}<br>
+    <label for="fname" style="font-size:15px">Gender</label>{{form.Gender}}<br>
+    <label for="fname" style="font-size:15px">Affected Area</label>{{form.Affected_Area}}
+  </div>
+
+		<div>
+      <form class="" method="post" enctype="multipart/form-data" action="predict">
+        <div class="row">
+          <img src="{{img.photo.url}}" style="width:500px;
+          height=200px;">
+          <h2 style="color: #800000;width:100%;">Dx:{{predi}}</h2>
+          <h2 style="color: #800000; width:800px;">Rx:{{rx}}</h2>
+        </div>
+        <a href="/">
+        <input type="button" style="width: 100%;
+        background: none;
+        border: 2px solid #000000;
+        color: #4caf50;
+        padding: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 12px 0;" value="Reload"></a>
+        </form>
+
+
+</div>
+
+  </body>
+</html>
